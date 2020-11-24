@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ЛАБ 5</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <main>
+      <form id="form" name="form" method="get" onsubmit="add();">
+        <label for="id"
+          >Недоступные ID:<select name="id" id="id"></select
+        ></label>
+        <label for="idclient"
+          >ID:
+          <input
+            type="number"
+            name="idclient"
+            id="idclient"
+            maxlength="2"
+            min="1"
+            max="100"
+            required
+        /></label>
+        <label for="name"
+          >Имя:
+          <input type="text" name="name" id="name" maxlength="20" required
+        /></label>
+        <label for="surname"
+          >Фамилия:
+          <input
+            type="text"
+            name="secondname"
+            id="secondname"
+            maxlength="20"
+            required
+        /></label>
+        <label for="thirdname"
+          >Отчество:
+          <input
+            type="text"
+            name="thirdname"
+            id="thirdname"
+            maxlength="20"
+            required
+        /></label>
+        <label for="address"
+          >Адрес: <input type="text" name="address" id="address"
+        /></label>
+        <label for="telnumber"
+          >Введите ваш номер телефона с кодом оператора (в формате
+          xx-xxx-xx-xx):
+          <input
+            type="tel"
+            name="telnumber"
+            id="telnumber"
+            pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            required
+        /></label>
+        <label for="reason"
+          >Необходимо ли оказывать стационарную помощь?
+          <input type="radio" name="help" value="Да" checked />Да
+          <input type="radio" name="help" value="Нет" />Нет
+        </label>
+        <button type="submit" id="save">Ввести запись в таблицу</button>
+        <button onclick="remove();" id="clean">Очистить форму</button>
+        <button onclick="deleteClient();" id="delete">
+          Удалить запись с определенным ID
+        </button>
+        <button onclick="showClients();" id="stationary">
+          Вывести всех клиентов, нуждающихся в стационарной помощи
+        </button>
+        <button onclick="addNewFeature();" id="newfeature">
+          Добавить новое свойство в таблицу
+        </button>
+        <button onclick="showTable();" id="show">Показать таблицу</button>
+      </form>
+    </main>
+    <article class="first">
+      <table id="table1"></table>
+    </article>
+    <article class="second">
+      <ol id="list"></ol>
+    </article>
+    <script src="../js/main.js"></script>
+    <script src="../js/template.js"></script>
+  </body>
+</html>
